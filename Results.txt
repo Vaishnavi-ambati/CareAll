@@ -1,0 +1,37 @@
+*************************************************************************************
+*************************************************************************************
+Accepting oldies by champ : 
+Hi Champ! You have been assigned an oldie.
+Oldie  name  : oldie3,oldie4
+Please type y for accepting oldie y
+Please Enter your(Champ) id  4
+Approval from adults : 
+Currently the champ is taking care of 1  oldie(s)
+Please enter number of oldies based on champ's vacancy 2
+The oldie has been assigned to champ_id:  4
+*******************************END OF OLDIE ASSIGNMENT ******************************************************
+
+Request from champ for payment : 
+Please Enter your(Champ) id  4
+Payment from adult : 
+Please make the payment for the champ  4
+Please enter the amount you want to pay  2000
+Your income has been updated!!!
+********************************* END OF PAYMENT ********************************************************
+
+Showing all the oldies assigned to a particular champ
+Please enter your champ_id: 4
+  Oldie Name  Oldie ID  Assigned Champ Champ Name
+0     oldie3         3               4      name4
+1     oldie4         4               4      name4
+********************************* END OF SHOWING OLDIES ****************************************************
+
+Showing champ who is taking care of a particular oldie : 
+Please Enter your oldie id  3
+  Oldie Name  Oldie ID  Assigned Champ Champ Name  Champ contact
+0     oldie3         3               4      name4    56710561230
+*********************************END OF SHOWING CHAMPS ****************************************************
+
+
+
+
