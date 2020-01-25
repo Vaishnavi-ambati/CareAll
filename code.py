@@ -33,29 +33,30 @@ class YoungChamp:
         else:
             champ_id = 0
             self.adult_obj.approve_young(champ_id)
-
+            
+     # A method to show oldies who are taken care by the champ
     def show_oldies(self):
         print("Showing all the oldies assigned to a particular champ")
         champ_id = input("Please enter your champ_id: ")
         cursor = connection.cursor()
         args = [champ_id]
         cursor.callproc('SelectAllOldies',args)
-
-        # print out the result
         for result in cursor.stored_results():
             x = result.fetchall()
         df = pd.DataFrame(x, columns=['Oldie Name', 'Oldie ID','Assigned Champ','Champ Name'])
         print(df)
         cursor.close()
         print("********************************* END OF SHOWING OLDIES ****************************************************")
-
+    
+     # A method for champs to assk for payment from adult
     def update_income(self):
         print("Request from champ for payment : ")
         champ_id = input("Please Enter your(Champ) id  ")
         self.adult_obj.make_payment(champ_id)
         print("Your income has been updated!!!")
         print("********************************* END OF PAYMENT ********************************************************")
-
+    
+     # A method for champs to reset their password
     def reset_password(self):
         new_password = input("Please Enter your new password  ")
         self.__password = new_password
@@ -75,6 +76,7 @@ class Adult:
         self.oldies_name = oldies_name
         print("*************************************************************************************")
 
+     # A method to show the details of who all a young chap is currently taking care of.
     def show_young(self):
         print("Showing champ who is taking care of a particular oldie : ")
         oldie_id = input("Please Enter your oldie id  ")
@@ -89,6 +91,7 @@ class Adult:
         cursor.close()
         print("*********************************END OF SHOWING CHAMPS ****************************************************")
 
+      # A method for adults to approve champs to take cra=e of their oldies
     def approve_young(self, champ_id):
         if int(champ_id) == 0:
             print("The champ is not willing to take care of your oldie : ")
@@ -122,6 +125,7 @@ class Adult:
             print(" The oldie has been assigned to champ_id: ", champ_id)
             print("*******************************END OF OLDIE ASSIGNMENT ******************************************************")
 
+      # A method to make payment for the champ
     def make_payment(self, champ_id):
         print("Payment from adult : ")
         print("Please make the payment for the champ ", champ_id)
@@ -149,6 +153,7 @@ class Adult:
         connection.commit()
         cursor.close()
 
+      # A method to reset the password for adult.
     def reset_password(self, new_password):
         new_password = input("Please Enter your new password  ")
         self.__password = new_password
